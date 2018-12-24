@@ -1,10 +1,10 @@
 # 李冲|Android开发(AR方向)
-男 | 29岁 | 本科 | 13718425650 | <lichongmac@163.com> 
+男 | 29岁 | 本科 | **13718425650** | <lichongmac@163.com> 
 
 <img src="./pic/github.png" height="15" width="15"> : [https://github.com/lichong951](https://github.com/lichong951) | 博客 ：[http://blog.51cto.com/4789781](http://blog.51cto.com/4789781)
 
-## 工作及项目经历
-### 亮风台
+### 工作及项目经历
+## 亮风台
 <img src="./pic/logo-hiscene.jpg.png" height="72" width="240">
 
 2017.5 ~ 2018.12 | Android开发（AR方向）
@@ -12,7 +12,7 @@
 * 根据客户AR场景业务需求，设计开发Android端AR技术解决方案
 * 探索预研ARCore、ARKit等AR框架与HiAR框架的融合解决方案，交付HiARSDK给客户使用
 * 快速开发出客户需要的AR场景效果Demo。以适应项目后期越来越快的需求演进变化
-* 包括但不限于使用ARCore、ARKit、Vuforia、easyAR、HiAR等AR技术框架；HoloLens、HiAR G100|G200 等AR眼镜。解决AR项目中业务需求。
+* 包括但不限于使用**ARCore**、**ARKit**、**Vuforia**、**easyAR**、**HiAR**等AR技术框架；**HoloLens**、**HiAR** **G100|G200** 等AR眼镜。解决AR项目中业务需求。
 * 包括但不限于使用Android studio、XCode、U3D、UE4等IDE工具完成AR前沿技术调研
 
 #### 业绩
@@ -41,7 +41,7 @@
 
 相关AR图片介绍见 [附一](#one)
 
-### 比特大陆|新物种公司（原北京小萝卜科技有限公司）
+## 比特大陆|新物种公司（原北京小萝卜科技有限公司）
 
 <img src="./pic/logo-bitmain-2.jpg" height="100" width="100" >&emsp;&emsp;&emsp;&emsp;
 <img src="./pic/logo-luobo.jpg" height="100" width="100" >
@@ -74,7 +74,7 @@
 * 临危受命维修参加绵阳展览会的小萝卜机器人。顺利完成绵阳电视台的采访表演任务。保证为期几天的展会小萝卜机器人可用可玩。
 * 优化二代小萝卜机器人开发解决方案，提前保质保量完成二代小萝卜机器人开发。顺利展示给公司战略合作伙伴。
 
-### 车讯互联
+## 车讯互联
 
 <img src="./pic/logo-chexun.png" >
 
@@ -102,6 +102,48 @@
 2007 ~ 2010 | 河北金融学院 | 专科 | 计算机网络
 
 ## 专业技能
+### 语言类
+* **Java**	&emsp;&emsp;&emsp;&emsp;熟悉Java的编辑运行，理解Java OpenGL；熟练使用常见设计模式、线程池多线程技术
+
+* **C#**	&emsp;&emsp;&emsp;&emsp;熟悉C#编辑运行；常使用U3D+Visual Studio
+
+* **C/C++**	&emsp;&emsp;&emsp;&emsp;了解C/C++编辑运行；熟悉JNI接口编辑运行
+
+* **Python**	&emsp;&emsp;&emsp;&emsp;了解Python的编程运行；曾使用Python运行Tensflow训练模型
+
+* **JavaScript**	&emsp;&emsp;&emsp;&emsp;了解JavaScript编辑运行；常使用在Android WebView里进行JS交互；也经常用在Node.js搭建本地服务器脚本编辑
+
+* **Lua**	&emsp;&emsp;&emsp;&emsp;了解CAPI以及Lua调用C、C++方法；常用来编辑屏幕模型与用户的交互处理，增强用户体验。也被看作是游戏脚本
+
+* **Web前端**	&emsp;&emsp;&emsp;&emsp;能进行简单Web前端和后端开发
+
+### 工具类	
+
+* IDE类：
+	* Android studio:常用于开发Android App
+	* XCode：通常结合U3D快速开发出AR场景Demo效果
+	* Unity3D：常用于ARKit、ARCore和Vuforia快速开发出AR效果demo
+	* Visual Studio
+	* Jenkins:自动化构建、打包、单元测试、UI测试、性能测试、功能测试、Monkey测试等
+	* Cmake：构建c、c++项目打包生成so文件
+	* MacDown：编辑文档工具
+	* Git：版本工具
+* 常用SDK和开发框架：
+	* Android SDK
+	* Android NDK
+	* JDK
+	* IOS SDK
+	* Junit
+	* Espresso
+	* Gradle
+	* cmake
+	* Node.js
+	* ARKit
+	* ARCore
+	* Vuforia
+	* MyQR
+	* SVN
+		
 
 
 ## <span id="one">附一</span>
