@@ -8,26 +8,26 @@
 Potatso Lite、Potatso、shadowrocket可以作为SSR客户端，但这些软件目前已经在国内的app商店下架，需要用美区的appid账号来下载才行
 以Potatso Lite为例，具体配置方法：
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota1.png)
+![MacDown logo](./pic/un1/pota1.png)
 
 1. 开始进行配置账号信息，选择右上角的 +
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota2.png)
+![MacDown logo](./pic/un1/pota2.png)
 
 2. 点击手动输入
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota3.png)
+![MacDown logo](./pic/un1/pota3.png)
 
 3. 类型有多种，可根据需求进行选择，这里以SSR为例
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota4.png)
+![MacDown logo](./pic/un1/pota4.png)
 
 
 4. 填好信息后，点击右上角的勾，保存即可
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota5.png)
+![MacDown logo](./pic/un1/pota5.png)
 
-![MacDown logo](/Users/lichong/Documents/课件/macdown/img/pota6.png)
+![MacDown logo](./pic/un1/pota6.png)
  
 
 
@@ -50,12 +50,7 @@ Potatso Lite、Potatso、shadowrocket可以作为SSR客户端，但这些软件�
 注意：不保证本账号一直可用，如果不可用请联系我
 
 #### 联系我
-微信二维码见下图
 
- ![MacDown logo](/Users/lichong/Documents/课件/macdown/img/Snip20180510_2.png)
- 
-QQ:492717776
-
- Email: lichongmac@163.com 
+ > Email: lichongmac@163.com 
 	
 	
