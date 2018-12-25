@@ -4,7 +4,9 @@
 <img src="./pic/github.png" height="15" width="15"> : [https://github.com/lichong951](https://github.com/lichong951) | 博客 ：[http://blog.51cto.com/4789781](http://blog.51cto.com/4789781)
 
 ## 基本信息
+本人有7年工作经验。在工程开发岗位上经验丰富。在最近工作经历中AR方面的工程实战银行、电商、汽车、教育等行业。开发交付能力较强。灵活、执着、有前瞻性的满足客户不断变化的需求
 
+期待参与【Android】【AR】【深度学习】等项目
 
 ## 专业技能
 ### 语言类
@@ -113,8 +115,6 @@
 * ARCore视频介绍地址：[http://list.youku.com/albumlist/show/id_52006304](http://list.youku.com/albumlist/show/id_52006304)
 * ARKit视频介绍地址：[http://list.youku.com/albumlist/show/id_51981529](http://list.youku.com/albumlist/show/id_51981529)
 
-相关AR图片介绍见 [附一](#one)
-
 官网地址：[https://www.hiscene.com](https://www.hiscene.com)
 
 ## 比特大陆|新物种公司（原北京小萝卜科技有限公司）
@@ -174,27 +174,3 @@
 2010 - 2012 | 衡水学院 | 本科 | 计算机
 
 2007 ~ 2010 | 河北金融学院 | 专科 | 计算机网络
-
-
-
-## <span id="one">附一</span>
-
-银行类：
-<div align="center">
-<img src="./pic/bank/IMG_1498.JPG" width="128" height="220" >&emsp;&emsp;&emsp;&emsp;
-<img src="./pic/bank/IMG_1496.JPG" width="128" height="220" >
-
-<img src="./pic/bank/IMG_1500.JPG" width="128" height="220" >&emsp;&emsp;&emsp;&emsp;
-<img src="./pic/bank/IMG_1499.JPG" width="128" height="220" >
-</div>
-
-电商类：
-<div align="center">
-<img src="./pic/arkit/ARKit-B-1.jpg" width="384" height="216" >
-
-<img src="./pic/arkit/ARKit-B-2.JPG" width="320" height="180" >
-</div>
-汽车类：
-<div align="center">
-<img src="./pic/ARCar02.jpg" width="384" height="216" >
-</div>
