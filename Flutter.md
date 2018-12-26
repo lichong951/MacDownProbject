@@ -6,3 +6,7 @@
 
 ## 搭建环境
 * 地址：[https://flutter.io/docs/get-started/install/macos](https://flutter.io/docs/get-started/install/macos)
+
+
+## 命令介绍
+*
