@@ -13,7 +13,8 @@
 * 探索预研ARCore、ARKit等AR框架与HiAR框架的融合解决方案，交付HiARSDK给客户使用
 * 快速开发出客户需要的AR场景效果Demo。以适应项目后期越来越快的需求演进变化
 * 包括但不限于使用**ARCore**、**ARKit**、**Vuforia**、**easyAR**、**HiAR**、**百度AR**等AR技术框架；**HoloLens**、**HiAR** **G100|G200** 等AR眼镜。解决AR项目中业务需求。
-* 包括但不限于使用Android studio、XCode、U3D、UE4等IDE工具完成AR前沿技术调研
+* 包括但不限于使用Android studio、XCode、Visual studio等IDE工具完成AR前沿技术调研
+* 了解主流3D渲染引擎在移动端业务开发：U3D、UE4、GamePlay、Three.js
 
 #### 业绩
 
@@ -146,9 +147,16 @@
 	* MyQR
 	* SVN
 
+* 3D引擎
+	* U3D
+	* UE4
+	* GamePlay
+	* Three.js
+
 * 扩展学习
+
 	* Dart 编程语言，类似JavaScript语言风格。用于Flutter开发
-	*  Flutter 比较火的开源前端框架。兼容Android、IOS、Linux、Fuchsia平台；
+	* Flutter 比较火的开源前端框架。兼容Android、IOS、Linux、Fuchsia平台；
 		
 
 
