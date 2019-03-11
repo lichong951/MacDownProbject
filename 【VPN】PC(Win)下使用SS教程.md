@@ -1,6 +1,6 @@
 ## 一个普通的程序员 + Google = 一个超级程序员
 ## 准备工作
-下载地址：[https://github.com/shadowsocksrr/shadowsocksr-csharp/releases](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases)
+下载地址：[https://github.com/shadowsocks/shadowsocks-windows/releases](https://github.com/shadowsocks/shadowsocks-windows/releases)
 
 ## 使用说明
 
