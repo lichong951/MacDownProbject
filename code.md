@@ -287,7 +287,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 
 ## SharedPreferences
 ```
-package top.lc951.smartshelf.utils;
+
 
 import android.content.Context;
 import android.content.SharedPreferences;
