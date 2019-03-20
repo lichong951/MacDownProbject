@@ -284,58 +284,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
 }
 
 ```
-## PopupWindow
-
-``` stylus
-private void showPopupWindow() {
-        tvSetImg(chooseTime , R.mipmap.arrow_top);
-        View view = LayoutInflater.from(TaskDownActivity.this).inflate(R.layout.choose_pop, null);
-        final PopupWindow popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-        popupWindow.setTouchable(true);
-        //一定要在代码中setBackgroundDrawable，不然点击外面popupWindow是不会dismiss的
-        popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_popup_view));
-        popupWindow.showAsDropDown(chooseTime);
-        popupWindow.setOnDismissListener(new PopupDismissListener());
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_choose_pop);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ChooseTimeAdapter adapter = new ChooseTimeAdapter(TaskDownActivity.this, new ChooseTimeAdapter.MyItemClickListener() {
-            @Override
-            public void onClick(View view) {
-                int tag = (int) view.getTag();
-                chooseTime.setText(mData.get(tag));
-                popupWindow.dismiss();
-            }
-        }, mData);
-        recyclerView.setAdapter(adapter);
-    }
-
-    /**
-     * 弹窗消失的时候让箭头换回来
-     */
-    class PopupDismissListener implements PopupWindow.OnDismissListener {
-        @Override
-        public void onDismiss() {
-            tvSetImg(chooseTime , R.mipmap.arrow_down);
-        }
-
-    }
-
-    /**
-     * 设置textView右侧的图像
-     * @param textView
-     * @param img
-     */
-    private void tvSetImg(TextView textView ,int img) {
-        Drawable nav_up = getResources().getDrawable(img);
-        nav_up.setBounds(0, 0, nav_up.getMinimumWidth(), nav_up.getMinimumHeight());
-        textView.setCompoundDrawables(null, null, nav_up, null);
-    }
---------------------- 
-作者：沐左 
-来源：CSDN 
-原文：https://blog.csdn.net/m0_37168878/article/details/78613947 
-版权声明：本文为博主原创文章，转载请附上博文链接！
-```
 
 ## SharedPreferences
 ```
@@ -443,6 +391,8 @@ public class SharedPreferencesUtil {
 }
 
 ```
+## Monkey
 
+	adb shell monkey -p XXXXX -s 200 --throttle 500  --monitor-native-crashes -v -v -v 1000
 
 欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过==设置==里的修改模板来改变新建文章的内容。
