@@ -151,7 +151,13 @@ monkey执行的seed值和随机事件次数
  ### espresso
  #### 常规运行AndroidTest命令
  
- 	gradlew cAt
+ 
+ 	./gradlew test
+    ./gradlew connectedAndroidTest
+ 	./gradlew cAT
+  
+  参考地址：
+  [https://developer.android.com/studio/test/command-line](https://developer.android.com/studio/test/command-line)
  
 #### AndroidTest测试运行
 ``` stylus
@@ -162,7 +168,7 @@ monkey执行的seed值和随机事件次数
  * adb shell am instrument -w -r   -e debug false  com.XXXX/android.support.test.runner.AndroidJUnitRunner
  * */
 
-
+C:\Program Files\Android\Android Studio\jre
 ```
 
 
