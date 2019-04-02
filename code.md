@@ -3,7 +3,7 @@ title: 常用代码模板
 tags: Android,模板,java
 grammar_cjkRuby: true
 ---
-[Shape](#shape)；[Activity](#Activity)；
+[Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);
 ## Shape
 ``` stylus
   <?xml version="1.0" encoding="UTF-8"?>
@@ -28,7 +28,7 @@ grammar_cjkRuby: true
 ```
 
 
-## Activity最佳实践
+## Activity
 
 ``` stylus
 public static void actionStart(Context context){
@@ -85,6 +85,10 @@ class MyAdapter extends BaseAdapter {
     }
 }
 ```
+
+注意
+	
+    根据你的代码目前只看到了一种可能:看你在主线程clear了所有的list但并没有立即notifyadapter(等到网络请求回来再notify已经晚了).list的size发生改变就必须立即notifyadapte
 
 ## 异常收集
 
@@ -447,4 +451,89 @@ private void showPopupWindow() {
 原文：https://blog.csdn.net/m0_37168878/article/details/78613947 
 版权声明：本文为博主原创文章，转载请附上博文链接！
 ```
+
+## XXXXAdapter extends BaseRecyclerAdapter
+
+``` stylus
+package com.glodon.glm.pad.adapter;
+
+import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.andview.refreshview.recyclerview.BaseRecyclerAdapter;
+import com.glodon.glm.pad.R;
+
+import java.util.List;
+
+/**
+【结构】SingleItemTextAdapter（C）+SingleItemText(I)
+ **/
+public class SingleItemTextAdapter extends BaseRecyclerAdapter<SingleItemTextAdapter.ViewHolder> {
+
+    private Context context;
+
+    public void setList(List<? extends SingleItemText> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
+
+    private List<? extends SingleItemText> list;
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    private OnItemClickListener onItemClickListener;
+    public SingleItemTextAdapter(Context context, List<? extends SingleItemText> list) {
+        this.context = context;
+        this.list = list;
+    }
+
+    @Override
+    public ViewHolder getViewHolder(View view) {
+        return new ViewHolder(view,false);
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType, boolean isItem) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.glodon_team_adapter_item, parent, false);
+        ViewHolder viewHolder=new ViewHolder(view,false);
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(v);
+            }
+        });
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position, boolean isItem) {
+        SingleItemText itemText=list.get(position);
+        holder.textView.setText(itemText.getText());
+    }
+
+    @Override
+    public int getAdapterItemCount() {
+        return null == list ? 0 : list.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView textView;
+
+        public ViewHolder(View itemView, boolean isItem) {
+            super(itemView);
+            textView = itemView.findViewById(R.id.tv_item);
+        }
+    }
+}
+
+```
+
+
 欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过==设置==里的修改模板来改变新建文章的内容。
