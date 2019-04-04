@@ -176,4 +176,16 @@ C:\Program Files\Android\Android Studio\jre
 [https://blog.csdn.net/u014133119/article/details/80923327](https://blog.csdn.net/u014133119/article/details/80923327)
  
  
-欢迎使用 **{小书匠}(xiaoshujiang)编辑器**，您可以通过==设置==里的修改模板来改变新建文章的内容。
+
+ ## Jenkins(win)
+    
+    echo %JOB_NAME%
+    echo %BUILD_NUMBER%
+    echo %WORKSPACE%
+    copy %WORKSPACE%\app\build\outputs\apk\release\_release.apk C:\Users\lic-w\public\apk\%JOB_NAME%-%BUILD_NUMBER%.apk
+    echo 'hello world'
+    cd C:\jenkins
+    java -jar qr.jar url=http://10.1.90.39:8000/apk/%JOB_NAME%-%BUILD_NUMBER%.apk image=%JOB_NAME%-%BUILD_NUMBER%.jpg save=C:\Users\lic-w\public\qr_img
+
+
+    <img src='http://10.1.90.39:8000/qr_img/${JOB_NAME}-${BUILD_NUMBER}.jpg' width="200px" height="200px" >
