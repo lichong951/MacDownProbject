@@ -1,5 +1,15 @@
 # Jenkins使用笔记
+
+## 运行命令（war）
+
+    java -jar jenkins.war
+
 ## 邮件通知格式
+
+163邮箱通知设置
+
+https://blog.csdn.net/yamingwu/article/details/44142635
+
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 ```
@@ -26,3 +36,6 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 
 变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>
 ```
+
+## 参考
+https://blog.csdn.net/u013066244/article/details/78665075
