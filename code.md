@@ -4,6 +4,28 @@ tags: Android,模板,java
 grammar_cjkRuby: true
 ---
 [Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);
+
+## TabLayout
+
+``` stylus
+    <!--app:tabTextColor="#ffffff" 设置字体默认颜色-->
+    <!--app:tabSelectedTextColor="#e40707" 设置字体被选中后的颜色-->
+    <!--app:tabIndicatorColor="#30e407" 设置指示器颜色-->
+    <!---->
+    <!--app:tabBackground="@color/colorye" 设置Tab背景颜色-->
+    <!--app:tabMode="scrollable"可滚动 app:tabMode="fixed"固定-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:tabIndicatorHeight="5dp"
+        app:tabIndicatorColor="#FF42C3FC"
+        app:tabIndicatorFullWidth="false"
+        />
+```
+#### 参考
+https://www.jianshu.com/p/83922d08250b
+
 ## Shape
 ``` stylus
   <?xml version="1.0" encoding="UTF-8"?>
