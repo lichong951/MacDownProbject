@@ -8,6 +8,123 @@ grammar_cjkRuby: true
 ## 插件
 ### generator findViewById
 
+### Lombok
+
+  
+  Android Studio
+  Follow the previous instructions (Gradle). In addition to setting up your gradle project correctly, you need to add the Lombok IntelliJ plugin to add lombok support to Android Studio:
+
+*  Go to File > Settings > Plugins
+*  Click on Browse repositories...
+*  Search for Lombok Plugin
+*  Click on Install plugin
+*  Restart Android Studio
+* Modify your application's dependencies block:
+
+      dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.6'
+        annotationProcessor 'org.projectlombok:lombok:1.18.6'
+      }
+
+详解
+
+    val
+
+    Finally! Hassle-free final local variables.
+
+    @NonNull
+
+    or: How I learned to stop worrying and love the NullPointerException.
+
+    @Cleanup
+
+    Automatic resource management: Call your close() methods safely with no hassle.
+
+    @Getter/@Setter
+
+    Never write public int getFoo() {return foo;} again.
+
+    @ToString
+
+    No need to start a debugger to see your fields: Just let lombok generate a toString for you!
+
+    @EqualsAndHashCode
+
+    Equality made easy: Generates hashCode and equals implementations from the fields of your object..
+
+    @NoArgsConstructor, @RequiredArgsConstructor and @AllArgsConstructor
+
+    Constructors made to order: Generates constructors that take no arguments, one argument per final / non-nullfield, or one argument for every field.
+
+    @Data
+
+    All together now: A shortcut for @ToString, @EqualsAndHashCode, @Getter on all fields, and @Setter on all non-final fields, and @RequiredArgsConstructor!
+
+    @Value
+
+    Immutable classes made very easy.
+
+    @Builder
+
+    ... and Bob's your uncle: No-hassle fancy-pants APIs for object creation!
+
+    @SneakyThrows
+
+    To boldly throw checked exceptions where no one has thrown them before!
+
+    @Synchronized
+
+    synchronized done right: Don't expose your locks.
+
+    @Getter(lazy=true)
+
+    Laziness is a virtue!
+
+    @Log
+
+    Captain's Log, stardate 24435.7: "What was that line again?"
+    Experimental
+
+    var
+
+    Modifiable local variables with a type inferred by assigning value.
+
+    @Accessors
+
+    A more fluent API for getters and setters.
+
+    @ExtensionMethod
+
+    Annoying API? Fix it yourself: Add new methods to existing types!
+
+    @FieldDefaults
+
+    New default field modifiers for the 21st century.
+
+    @Delegate
+
+    Don't lose your composition.
+
+    @Wither
+
+    Immutable 'setters' - methods that create a clone but with one changed field.
+
+    onMethod= / onConstructor= / onParam=
+
+    Sup dawg, we heard you like annotations, so we put annotations in your annotations so you can annotate while you're annotating.
+
+    @UtilityClass
+
+    Utility, metility, wetility! Utility classes for the masses.
+
+    @Helper
+
+    With a little help from my friends... Helper methods for java.
+
+### 参考
+https://www.jianshu.com/p/60b3ffc02bbe
+
+
 ### GsonFormat
 https://github.com/zzz40500/GsonFormat/blob/master/README_CN.md[](https://github.com/zzz40500/GsonFormat/blob/master/README_CN.md)
 

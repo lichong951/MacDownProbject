@@ -556,6 +556,13 @@ public class SingleItemTextAdapter extends BaseRecyclerAdapter<SingleItemTextAda
 }
 
 ```
+
+### Annotation processors must be explicitly declared now.  The following dependencies on the compile classpath are found to contain annotation processor.  Please add them to the annotationProcessor configuration.- lombok-1.18.6.jar (org.projectlombok:lo
+
+        A problem occurred evaluating project ':glw'.
+        > Could not find method javaCompileOptions() for arguments [build_dvpewjfi1881dp1y6jjukd2h5$_run_closure1$_closure5@1984580f] on object of type com.android.build.gradle.AppExtension.
+
+
 ## 记录
 https://blog.csdn.net/hardworkingant/article/details/78158154
 
