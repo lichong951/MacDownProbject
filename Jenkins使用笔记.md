@@ -1,4 +1,11 @@
 # Jenkins使用笔记
+
+---
+There were errors checking the update sites: SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+---
+
+
 ## java
 ## Android SDK
 ## Git
@@ -18,6 +25,29 @@ ssh-keygen -t rsa -C "youremail@example.com"
 ## Node
 
 npm install http-server -g
+
+## 构建触发器
+
+时间设置说明
+
+        * * * * *
+        (五颗星，中间用空格隔开）
+        第一颗*表示分钟，取值0~59
+        第二颗*表示小时，取值0~23
+        第三颗*表示一个月的第几天，取值1~31
+        第四颗*表示第几月，取值1~12
+        第五颗*表示一周中的第几天，取值0~7，其中0和7代表的都是周日
+
+例子如下：
+
+
+        每15分钟构建一次：H/15 * * * *   或*/5 * * * *
+        每天8点构建一次：0 8 * * *
+        每天8点~17点，两小时构建一次：0 8-17/2 * * *
+        周一到周五，8点~17点，两小时构建一次：0 8-17/2 * * 1-5
+        每月1号、15号各构建一次，除12月：H H 1,15 1-11 *
+        */5 * * * * （每5分钟检查一次源码变化）
+        0 2 * * * （每天2:00 必须build一次源码）
 
 ## 构建操作
 
