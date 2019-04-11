@@ -45,12 +45,45 @@ grammar_cjkRuby: true
 ## ssh
 ssh-keygen -t rsa -C "youremail@example.com"
 
+验证
+    例子：ssh -T git@code.aliyun.com
+返回 Welcome to GIT, 用户名! 成功
+
 ## Jekins
 
+Jenkins特性：
+
+1、易于安装-本文提供四种配置方式。
+
+2、易于配置-所有配置都是通过其提供的web界面实现。
+
+3、**集成RSS**/E-mail通过RSS发布构建结果或当构建完成时通过e-mail通知。
+
+4、生成JUnit/TestNG测试报告。
+
+5、分布式构建支持Jenkins能够让多台计算机一起构建/测试。
+
+6、文件识别:Jenkins能够跟踪哪次构建生成哪些jar，哪次构建使用哪个版本的jar等。
+
+7、插件支持:支持扩展插件，你可以开发适合自己团队使用的工具。
+
+8、Jenkins一切配置都可以在web界面上完成。有些配置如MAVEN_HOME和Email，只需要配置一次，所有的项目就都能用。当然也可以通过修改XML进行配置。
+
+9、支持Maven的模块(Module)，Jenkins对Maven做了优化，因此它能自动识别Module，每个Module可以配置成一个job。相当灵活。
+
+10、测试报告聚合，所有模块的测试报告都被聚合在一起，结果一目了然，使用其他CI，这几乎是件不可能完成的任务。
+
+11、构件指纹(artifact fingerprint)，每次build的结果构件都被很好的自动管理，无需任何配置就可以方便的浏览下载。
+
 ### 安装
+
 ### 配置
+
+1
+
 ### 测试
 
+1
 http://jenkins-ci.org/
 
 
@@ -115,6 +148,7 @@ npm install http-server -g
 
     <img src='http://10.1.17.54:8000/qr_img/${JOB_NAME}-debug-${BUILD_NUMBER}.jpg' width="200px" height="200px" >
 
+## 集成RSS
 
 ### 邮件通知格式
 
@@ -192,6 +226,28 @@ There were errors checking the update sites: SSLHandshakeException: sun.security
 
 ---
 
-## 参考
-https://blog.csdn.net/u013066244/article/details/78665075
+## 附一 参考
 
+[https://blog.csdn.net/u013066244/article/details/78665075](https://blog.csdn.net/u013066244/article/details/78665075)
+
+## 附二 常见问题汇总
+
+Jenkins默认会在Build结束后Kill掉所有的衍生进程，导致后台无法运行应用程序。
+
+在Post Steps ->Execute Shell 中配置的应用程序启动脚本启动后，当Build结束，进程会被Jenkins杀掉。为了在退出Build时继续运行程序，需要进行以下配置，才能避免此类情况发生。
+
+7.1 方式一
+
+a、重设环境变量build_id
+
+在execute shell输入框中加入BUILD_ID=DONTKILLME,即可防止jenkins杀死启动的应用程序进程
+
+b、在启动jenkins 的时候禁止jenkins杀死衍生进程
+
+修改/etc/sysconfig/jenkins配置，在JENKINS_JAVA_OPTIONS中加入-Dhudson.util.ProcessTree.disable=true。需要重启jenkins生效。此方法配置一次后，所有的job都无需设置BUILD_ID，就能够防止jenkins杀死启动的应用程序进程。
+
+7.2、方式二
+
+添加 Post build task插件,在 Post build task 处执行脚本。
+
+每当检测到项目编译信息中包含log text中的文本即执行script中的shell脚本。此处执行脚本启动的进程，jenkins不会自动kill。
