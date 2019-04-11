@@ -1,32 +1,85 @@
-# Jenkins使用笔记
-
 ---
-There were errors checking the update sites: SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-
+title: Jenkins使用笔记（win）
+tags: IOS,自动构建,Jenkins
+grammar_cjkRuby: true
 ---
+# Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务
+
+## java 
+
+### 安装
+
+下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+根据电脑环境安装合适的版本
+
+### 配置
+
+    在"用户变量"中设置3项属性，JAVA_HOME,PATH,CLASSPATH(不区分大小写),若已存在则点击"编辑"，注意用分号与前面的隔开，不存在则点击"新建"。
+
+    变量设置参数如下：
+
+    变量名： JAVA_HOME
+    变量值： C:\Program Files\Java\jdk1.8.0_111
+    变量名： Path
+    变量值： %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+    变量名： CLASSPATH
+    变量值： .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;       注意：这前面有一个点‘.’
 
 
-## java
+### 测试
+
+    command(window键)+R,然后输入cmd,确定后输入命令: java、javac 几个命令
+![](./pic/Jenkins/微信截图_20190411143758.png)
+
 ## Android SDK
+### 安装
+### 配置
+### 测试
+
 ## Git
-## Jenkins插件列表
-
-## Gradle(可选)
-
-## 二维码生成
+### 安装
+### 配置
+### 测试
 
 ## ssh
 ssh-keygen -t rsa -C "youremail@example.com"
+
+## Jekins
+
+### 安装
+### 配置
+### 测试
+
+http://jenkins-ci.org/
+
 
 ## 运行命令（war）
 
     java -jar jenkins.war
 
-## Node
+## Jenkins插件列表
 
+## Gradle(可选)
+### 安装
+### 配置
+### 测试
+
+## 二维码生成
+### 安装
+### 配置
+### 测试
+
+
+## Node
+### 安装
+### 配置
+### 测试
 npm install http-server -g
 
-## 构建触发器
+## 配置Job
+
+### 构建触发器
 
 时间设置说明
 
@@ -49,7 +102,7 @@ npm install http-server -g
         */5 * * * * （每5分钟检查一次源码变化）
         0 2 * * * （每天2:00 必须build一次源码）
 
-## 构建操作
+### 构建操作
 
     echo %JOB_NAME%
     echo %BUILD_NUMBER%
@@ -58,18 +111,18 @@ npm install http-server -g
     cd C:\jenkins
     java -jar qr.jar url=http://10.1.17.54:8000/apk/%JOB_NAME%-debug-%BUILD_NUMBER%.apk image=%JOB_NAME%-debug-%BUILD_NUMBER%.jpg save=C:\Users\zhangtj-a\public\qr_img
 
-## Set build desc
+### Set build desc
 
     <img src='http://10.1.17.54:8000/qr_img/${JOB_NAME}-debug-${BUILD_NUMBER}.jpg' width="200px" height="200px" >
 
 
-## 邮件通知格式
+### 邮件通知格式
 
 163邮箱通知设置
 
 https://blog.csdn.net/yamingwu/article/details/44142635
 
-### 模板一
+#### 模板一
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
@@ -101,7 +154,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>
 ```
 
-### 模板二
+#### 模板二
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
@@ -118,6 +171,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 二维码下载：<img src='http://10.1.67.54:8000/qr_img/${JOB_NAME}-debug-${BUILD_NUMBER}.jpg' width="200px" height="200px" ><br>
 最近修改：<br>${CHANGES, showPaths=false, format="%a：\"%m\"<br>", pathFormat="\n\t- %p"}
 
+> 建议使用“邮箱大师”|“Foxmail”接收邮件
 
 ## 疑难解决
 ###  553 Mail from must equal authorized user
@@ -130,6 +184,13 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 
 解决方式如下：
 https://blog.csdn.net/yamingwu/article/details/44142635
+
+
+### SSLHandshakeException
+---
+There were errors checking the update sites: SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+---
 
 ## 参考
 https://blog.csdn.net/u013066244/article/details/78665075
