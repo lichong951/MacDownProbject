@@ -5,7 +5,18 @@ grammar_cjkRuby: true
 ---
 # Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务
 
-## java-JDK安装
+[JDK](#JDK)
+[Android SDK](#Android SDK)
+[Git](#Git)
+[Jekins](#Jekins)
+[Gradle](#Gradle)
+[Node](#Node)
+[配置Job](#配置Job)
+[二维码生成](#二维码生成)
+[集成RSS](#集成RSS)
+[](#)
+
+## JDK
 
 > 安装
 
