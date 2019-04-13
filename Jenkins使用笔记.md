@@ -117,6 +117,15 @@ http://jenkins-ci.org/
 
 ## Jenkins插件列表
 
+* Build Timeout
+* description setter plugin
+* Email Extension Plugin
+* GitHub Branch Source Plugin
+* Gradle Plugin
+* SSH Slaves plugin
+* Timestamper
+* 
+
 ## Gradle(可选)
 > 安装
 > 配置
