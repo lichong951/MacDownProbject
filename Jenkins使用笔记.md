@@ -5,15 +5,15 @@ grammar_cjkRuby: true
 ---
 # Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务
 
-## java 
+## java-JDK安装
 
-### 安装
+> 安装
 
 下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 根据电脑环境安装合适的版本
 
-### 配置
+> 配置
 
     在"用户变量"中设置3项属性，JAVA_HOME,PATH,CLASSPATH(不区分大小写),若已存在则点击"编辑"，注意用分号与前面的隔开，不存在则点击"新建"。
 
@@ -27,27 +27,51 @@ grammar_cjkRuby: true
     变量值： .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;       注意：这前面有一个点‘.’
 
 
-### 测试
+> 测试
 
     command(window键)+R,然后输入cmd,确定后输入命令: java、javac 几个命令
 ![](./pic/Jenkins/微信截图_20190411143758.png)
 
 ## Android SDK
-### 安装
-### 配置
-### 测试
+
+> sdk安装
+下载地址：[Android Studio](https://developer.android.com/studio)
+
+下载Android studio即可在安装流程里下载AndroidSDK
+![studio](./pic/android/studio-homepage-hero.jpg)
+
+> 环境配置（可选）
+
+ANDROID_HOME=“安装目录”
+
+> 测试
+使用adb进行命令测试如下图
+![](.pic/android/QQ截图20190413172923.png)
+
+> 参考
+
+[Android Studio](https://developer.android.com/studio)
 
 ## Git
-### 安装
-### 配置
-### 测试
+> 安装
+安装教程
+[https://www.jianshu.com/p/414ccd423efc](https://www.jianshu.com/p/414ccd423efc)
 
-## ssh
-ssh-keygen -t rsa -C "youremail@example.com"
+> 测试
+在终端输入 “git --version”如下图：
+
+![](./pic/Jenkins/微信截图_20190413175119.png)
+
+> ssh
+    ssh-keygen -t rsa -C "youremail@example.com"
 
 验证
+
     例子：ssh -T git@code.aliyun.com
-返回 Welcome to GIT, 用户名! 成功
+    返回 Welcome to GIT, 用户名! 成功
+
+> 参考地址
+[官网安装教程](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 
 ## Jekins
 
@@ -75,13 +99,13 @@ Jenkins特性：
 
 11、构件指纹(artifact fingerprint)，每次build的结果构件都被很好的自动管理，无需任何配置就可以方便的浏览下载。
 
-### 安装
+> 安装
 
-### 配置
+> 配置
 
 1
 
-### 测试
+> 测试
 
 1
 http://jenkins-ci.org/
@@ -94,25 +118,25 @@ http://jenkins-ci.org/
 ## Jenkins插件列表
 
 ## Gradle(可选)
-### 安装
-### 配置
-### 测试
+> 安装
+> 配置
+> 测试
 
 ## 二维码生成
-### 安装
-### 配置
-### 测试
+> 安装
+> 配置
+> 测试
 
 
 ## Node
-### 安装
-### 配置
-### 测试
+> 安装
+> 配置
+> 测试
 npm install http-server -g
 
 ## 配置Job
 
-### 构建触发器
+> 构建触发器
 
 时间设置说明
 
@@ -135,7 +159,7 @@ npm install http-server -g
         */5 * * * * （每5分钟检查一次源码变化）
         0 2 * * * （每天2:00 必须build一次源码）
 
-### 构建操作
+> 构建操作
 
     echo %JOB_NAME%
     echo %BUILD_NUMBER%
@@ -144,19 +168,19 @@ npm install http-server -g
     cd C:\jenkins
     java -jar qr.jar url=http://10.1.17.54:8000/apk/%JOB_NAME%-debug-%BUILD_NUMBER%.apk image=%JOB_NAME%-debug-%BUILD_NUMBER%.jpg save=C:\Users\zhangtj-a\public\qr_img
 
-### Set build desc
+> Set build desc
 
     <img src='http://10.1.17.54:8000/qr_img/${JOB_NAME}-debug-${BUILD_NUMBER}.jpg' width="200px" height="200px" >
 
 ## 集成RSS
 
-### 邮件通知格式
+> 邮件通知格式
 
 163邮箱通知设置
 
 https://blog.csdn.net/yamingwu/article/details/44142635
 
-#### 模板一
+># 模板一
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
@@ -188,7 +212,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>
 ```
 
-#### 模板二
+># 模板二
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
@@ -208,7 +232,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 > 建议使用“邮箱大师”|“Foxmail”接收邮件
 
 ## 疑难解决
-###  553 Mail from must equal authorized user
+>  553 Mail from must equal authorized user
 ![](./pic/Jenkins/ssr4040.png)
 有些人错误为501 mail from address must be same as authorization user;其实问题是一样的
 
@@ -220,7 +244,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 https://blog.csdn.net/yamingwu/article/details/44142635
 
 
-### SSLHandshakeException
+> SSLHandshakeException
 ---
 There were errors checking the update sites: SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
 
