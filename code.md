@@ -4,6 +4,71 @@ tags: Android,模板,java
 grammar_cjkRuby: true
 ---
 [Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);
+[webView](#webView);
+[Gson](#Gson);
+[TabLayout](#TabLayout);
+
+## Gson
+``` stylus
+Gson gson = new Gson();
+String jsonArray = "[\"Android\",\"Java\",\"PHP\"]";
+String[] strings = gson.fromJson(jsonArray, String[].class);
+List<String> stringList = gson.fromJson(jsonArray, new TypeToken<List<String>>() {}.getType());
+
+```
+
+``` stylus
+//不再重复定义Result类
+Type userType = new TypeToken<Result<User>>(){}.getType();
+Result<User> userResult = gson.fromJson(json,userType);
+User user = userResult.data;
+
+Type userListType = new TypeToken<Result<List<User>>>(){}.getType();
+Result<List<User>> userListResult = gson.fromJson(json,userListType);
+List<User> users = userListResult.data;
+```
+[https://www.jianshu.com/p/e740196225a4](https://www.jianshu.com/p/e740196225a4)
+
+
+## webView
+
+``` stylus
+webView = new WebView(this);
+        WebSettings settings = webView.getSettings();
+        settings.setDomStorageEnabled(true);
+        settings.setJavaScriptEnabled(true);
+        settings.setBlockNetworkImage(false);
+        webView.setWebViewClient(javaMethod.getWebViewClient());
+        webView.setWebChromeClient(javaMethod.getWebChromeClient());
+        webView.addJavascriptInterface(javaMethod,"androidTest");
+        frameLayout.addView(webView);
+//        webView.loadUrl("file:///android_asset/JsMethod.html");
+        webView.loadUrl("file:///android_asset/www/page/person_overview.html");
+
+```
+.JAVA.CLOUD.AUTH=4d145eeb-7e5f-46c0-8c59-51789531df2a;__gm.t=eyJhbGciOiJIUzUxMiJ9.WlhsS2FHSkhZMmxQYVVwcllWaEphVXhEU214aWJVMXBUMmxLUWsxVVNUUlJNRXBFVEZWb1ZFMXFWVEpKYmpBdUxsSnFTVmhOVTAxNVRGVk5aRmxuWkdwNFNqRTFlWGN1WmpkSVoxQjRYMWwyYTBwVVZsaGpjMGs0Y1dKTGFIVXdNMlY2YlZZNWNVOUJaVzV2WlhObGIyaFhTRzF6Y1hoa1JVWlBiakJOZDFGdU1tMXZMVTlwVmtzeGVWWkNORmhQVmtsek0ycEhTWFZ0Vm0xeE9FNUVRMkpJVTNaSGFXMWllVEI0VDNwMFZEWjBXazF3UjBONlNGQkNaa0kzVUV0M1VXa3hOVTgyU0dNM1N6WldabmxEYVV4RWFFYzRNMVpsYTB0Sk1WUTFhM1JYVUhaZldGTXpNWGhqTTNCMlpIbDJUWEpWTGpGU00wMTVWbE15UlRaMWVtaE1aSE4wZWpGd1RWRT0.DHoeQfL4h3tWB3QVIEwhzDZNW4mocBWx78nR1_0VAe1jv8GuP1dg_jj3C2nf4MbBt1MJYjLScXL3pds7psts9Q;.CLOUD_ACCESS_TOKEN=cn-d555a4d0-5497-4893-aba3-15bfaf1f3864;
+
+ 
+
+
+---
+net：：ERR_CLEARTEXT_NOT_PERMITTED Android9.0无法加载url
+
+解决：
+    
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest ...>
+        <uses-permission android:name="android.permission.INTERNET" />
+        <application
+            ...
+            android:usesCleartextTraffic="true"
+            ...>
+            ...
+        </application>
+    </manifest>
+
+
+---
 
 ## TabLayout
 
