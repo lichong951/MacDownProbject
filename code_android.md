@@ -1,13 +1,50 @@
 ---
-title: 常用代码模板 
+title: Android常用代码模板 
 tags: Android,模板,java
 grammar_cjkRuby: true
 ---
-[Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);
-[webView](#webView);
-[Gson](#Gson);
-[TabLayout](#TabLayout);
-[屏幕宽高](#屏幕宽高);
+[Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);[recyclerView](#RecyclerView);[webView](#WebView);[Gson](#Gson);[TabLayout](#TabLayout);[屏幕宽高](#屏幕宽高);
+[Monkey](#Monkey);[阴影](#阴影);
+[扫描雷达](#扫描雷达);
+[动画](#动画);
+
+## 动画
+``` stylus
+RotateAnimation rotateAnimation = new RotateAnimation(0, 359, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnimation.setDuration(4000);
+        rotateAnimation.setFillAfter(true);
+        rotateAnimation.setRepeatMode(Animation.RESTART);
+        //让旋转动画一直转，不停顿的重点
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        rotateAnimation.setRepeatCount(-1);
+
+        ivScanningRotate.startAnimation(rotateAnimation);
+```
+
+` ivScanningRotate.clearAnimation();`
+## 扫描雷达
+
+
+> 参考
+[]()
+[http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/1214/8913.html](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/1214/8913.html)
+[https://github.com/donkingliang/RadarView](https://github.com/donkingliang/RadarView)
+
+## 阴影
+
+`                        android:elevation="8dp"
+`
+
+## monkey
+`adb -s emulator-5556 shell monkey -s 200 --throttle 300 -p com.glodon.gdb.app -v 100`
+
+`adb -s emulator-5554 shell`
+
+
+## 泡泡碰撞
+
+
+https://demo.demohuo.top/jquery/22/2223/demo/
 
 ## 屏幕宽高
 
@@ -62,7 +99,7 @@ List<User> users = userListResult.data;
 [https://www.jianshu.com/p/e740196225a4](https://www.jianshu.com/p/e740196225a4)
 
 
-## webView
+## WebView
 
 ``` stylus
 webView = new WebView(this);
@@ -154,6 +191,17 @@ public static void actionStart(Context context){
         context.startActivity(new Intent(context,GlodonGroupManageSearch.class));
     }
 ```
+## RecyclerView
+``` stylus
+ recyclerView = findViewById(R.id.recycler_view);
+        LinearLayoutManager searchLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(searchLayoutManager);
+        adapter = new SingleItemTextAdapter(this, devices);
+        recyclerView.setAdapter(adapter);
+```
+ 
+
+
 ## ListView
 
 ``` stylus
