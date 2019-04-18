@@ -7,6 +7,7 @@ grammar_cjkRuby: true
 [Monkey](#Monkey);[阴影](#阴影);
 [扫描雷达](#扫描雷达);
 [动画](#动画);
+[动画](#定点平移动画);
 
 ## 动画
 ``` stylus
@@ -22,6 +23,142 @@ RotateAnimation rotateAnimation = new RotateAnimation(0, 359, Animation.RELATIVE
 ```
 
 ` ivScanningRotate.clearAnimation();`
+
+``` stylus
+
+//        //初始化 Translate动画
+//        TranslateAnimation translateAnimation = new TranslateAnimation(
+//                itemView.getX(),
+//                Utils.dp2px(this,220),
+//                itemView.getY(),
+//                Utils.dp2px(this,320));
+//        //初始化 Alpha动画
+//        AlphaAnimation alphaAnimation = new AlphaAnimation(0.3f, 1.0f);
+//
+//        ScaleAnimation scaleAnimation = new ScaleAnimation(1f, 0.625f, 1f, 0.625f,
+//                ScaleAnimation.ABSOLUTE,
+//                itemView.getWidth() / 2f,
+//                ScaleAnimation.ABSOLUTE, itemView.getHeight() / 2f);
+//        //动画集
+//        AnimationSet set = new AnimationSet(true);
+//        set.addAnimation(translateAnimation);
+//        set.addAnimation(alphaAnimation);
+//        set.addAnimation(scaleAnimation);
+//        //设置动画结束之后的状态是否是动画的最终状态，true，表示是保持动画结束时的最终状态
+//        set.setFillAfter(true);
+//        set.setFillEnabled(true);//使其可以填充效果从而不回到原地
+//        //设置动画时间 (作用到每个动画)
+//        set.setDuration(6000);
+//        itemView.startAnimation(set);
+
+translateAnimation.setAnimationListener(
+                new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {//开始时
+ 
+                    }
+ 
+                    @Override
+                    public void onAnimationEnd(Animation animation) {//结束时
+ 
+                    }
+ 
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {//进行时
+ 
+                    }
+                });
+
+```
+### 定点平移动画
+``` stylus
+ String xyStr = (String) imageView.getTag();
+        String[] x_y = xyStr.split("，");
+        float xEnd =Utils.dp2px(this, Integer.valueOf(x_y[0]))- Utils.dip2px(this, 40) / 2;
+        float yEnd =  Utils.dp2px(this, Integer.valueOf(x_y[1]))- Utils.dip2px(this, 40) / 2;
+
+        imageView.setX(Utils.getScreenWith(this) / 2 - Utils.dip2px(this, 80) / 2);
+        imageView.setY(Utils.dp2px(this, 10) - Utils.dip2px(this, 80) / 2);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(Utils.dp2px(this, 80)
+                , Utils.dp2px(this, 80));
+        imageView.setLayoutParams(params);
+
+        //移动
+        ObjectAnimator translationXAnimator = ObjectAnimator.ofFloat(imageView, "translationX",
+                xEnd);
+        ObjectAnimator translationYAnimator = ObjectAnimator.ofFloat(imageView, "translationY",
+                yEnd);
+
+        //沿x轴放大
+        ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 0.5f);
+//沿y轴放大
+        ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(imageView, "scaleY", 1f, 0.5f);
+
+        AnimatorSet set = new AnimatorSet();
+        //同时沿X,Y轴放大，且改变透明度，然后移动
+        set.play(translationXAnimator)
+                .with(translationYAnimator)
+                .after(scaleXAnimator).after(scaleYAnimator);
+//都设置3s，也可以为每个单独设置
+        set.setDuration(1000);
+        set.start();
+```
+
+
+[原文：https://blog.csdn.net/qq_39056803/article/details/79375667 ](https://blog.csdn.net/qq_39056803/article/details/79375667 )
+
+``` stylus
+ //沿x轴放大
+        ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(itemView, "scaleX", 1f, 0.625f);
+//沿y轴放大
+        ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(itemView, "scaleY", 1f, 0.625f);
+//移动
+        ObjectAnimator translationXAnimator = ObjectAnimator.ofFloat(itemView, "translationX",
+                itemView.getX(), Utils.dp2px(this,220)-itemView.getX());
+        ObjectAnimator translationYAnimator = ObjectAnimator.ofFloat(itemView, "translationY",
+                itemView.getY(), Utils.dp2px(this,320)-itemView.getY());
+
+//透明动画
+        ObjectAnimator animator = ObjectAnimator.ofFloat(itemView, "alpha", 1f, 0.6f, 1f);
+        AnimatorSet set = new AnimatorSet();
+//同时沿X,Y轴放大，且改变透明度，然后移动
+        set.play(scaleXAnimator)
+                .with(scaleYAnimator)
+                .with(animator)
+                .before(translationXAnimator)
+                .before(translationYAnimator);
+//都设置3s，也可以为每个单独设置
+        set.setDuration(800);
+        set.start();
+        
+        //添加监听事件
+                set.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+                        //动画开始的时候调用
+                    }
+        
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        //画结束的时候调用
+                    }
+        
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+                        //动画被取消的时候调用
+                    }
+        
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+                        //动画重复执行的时候调用
+        
+                    }
+                });
+```
+
+> 参考
+[https://www.jianshu.com/p/d23f58f4368d](https://www.jianshu.com/p/d23f58f4368d)
+
 ## 扫描雷达
 
 
