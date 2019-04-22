@@ -8,6 +8,10 @@ grammar_cjkRuby: true
 [扫描雷达](#扫描雷达);
 [动画](#动画);
 [动画](#定点平移动画);
+[PopupWindow](#PopupWindow);
+[Glide](#Glide);
+## Glide
+[https://www.jianshu.com/p/89567c934008](https://www.jianshu.com/p/89567c934008)
 
 ## 动画
 ``` stylus
@@ -250,6 +254,20 @@ webView = new WebView(this);
         frameLayout.addView(webView);
 //        webView.loadUrl("file:///android_asset/JsMethod.html");
         webView.loadUrl("file:///android_asset/www/page/person_overview.html");
+        
+        //支持javascript  
+        web.getSettings().setJavaScriptEnabled(true);   
+        // 设置可以支持缩放   
+        web.getSettings().setSupportZoom(true);   
+        // 设置出现缩放工具   
+        web.getSettings().setBuiltInZoomControls(true);  
+        //扩大比例的缩放  
+        web.getSettings().setUseWideViewPort(true);  
+        //自适应屏幕  
+        web.getSettings().setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);  
+        web.getSettings().setLoadWithOverviewMode(true); 
+        
+        原文：https://blog.csdn.net/zrbcsdn/article/details/76077387 
 
 ```
 .JAVA.CLOUD.AUTH=4d145eeb-7e5f-46c0-8c59-51789531df2a;__gm.t=eyJhbGciOiJIUzUxMiJ9.WlhsS2FHSkhZMmxQYVVwcllWaEphVXhEU214aWJVMXBUMmxLUWsxVVNUUlJNRXBFVEZWb1ZFMXFWVEpKYmpBdUxsSnFTVmhOVTAxNVRGVk5aRmxuWkdwNFNqRTFlWGN1WmpkSVoxQjRYMWwyYTBwVVZsaGpjMGs0Y1dKTGFIVXdNMlY2YlZZNWNVOUJaVzV2WlhObGIyaFhTRzF6Y1hoa1JVWlBiakJOZDFGdU1tMXZMVTlwVmtzeGVWWkNORmhQVmtsek0ycEhTWFZ0Vm0xeE9FNUVRMkpJVTNaSGFXMWllVEI0VDNwMFZEWjBXazF3UjBONlNGQkNaa0kzVUV0M1VXa3hOVTgyU0dNM1N6WldabmxEYVV4RWFFYzRNMVpsYTB0Sk1WUTFhM1JYVUhaZldGTXpNWGhqTTNCMlpIbDJUWEpWTGpGU00wMTVWbE15UlRaMWVtaE1aSE4wZWpGd1RWRT0.DHoeQfL4h3tWB3QVIEwhzDZNW4mocBWx78nR1_0VAe1jv8GuP1dg_jj3C2nf4MbBt1MJYjLScXL3pds7psts9Q;.CLOUD_ACCESS_TOKEN=cn-d555a4d0-5497-4893-aba3-15bfaf1f3864;
