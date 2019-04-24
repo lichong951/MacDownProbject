@@ -10,6 +10,32 @@ grammar_cjkRuby: true
 [动画](#定点平移动画);
 [PopupWindow](#PopupWindow);
 [Glide](#Glide);
+[自动安装](#自动安装);
+
+## 自动安装
+``` stylus
+//普通安装
+private static void installNormal(Context context,String apkPath) {
+    Intent intent = new Intent(Intent.ACTION_VIEW);
+    //版本在7.0以上是不能直接通过uri访问的
+    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.N) {
+        File file = (new File(apkPath));
+        // 由于没有在Activity环境下启动Activity,设置下面的标签
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //参数1 上下文, 参数2 Provider主机地址 和配置文件中保持一致   参数3  共享的文件
+        Uri apkUri = FileProvider.getUriForFile(context, "com.example.chenfengyao.installapkdemo", file);
+        //添加这一句表示对目标应用临时授权该Uri所代表的文件
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
+    } else {
+        intent.setDataAndType(Uri.fromFile(new File(apkPath)),
+                "application/vnd.android.package-archive");
+    }
+    context.startActivity(intent);
+}
+```
+[https://blog.csdn.net/cfy137000/article/details/70257912](https://blog.csdn.net/cfy137000/article/details/70257912)
+
 ## Glide
 [https://www.jianshu.com/p/89567c934008](https://www.jianshu.com/p/89567c934008)
 
@@ -293,6 +319,29 @@ net：：ERR_CLEARTEXT_NOT_PERMITTED Android9.0无法加载url
 
 
 ---
+
+> chromium: [INFO:CONSOLE(1)] "Uncaught ReferenceError: 张 is not defined
+
+类似情况
+``` stylus
+[INFO:CONSOLE(1)] “Uncaught ReferenceError: getData is not defined”, source: (1) 
+[INFO:CONSOLE(1)] “Uncaught ReferenceError: myData is not defined”, source: (1)
+原文：https://blog.csdn.net/Xiong_IT/article/details/52703941 
+```
+原因是，当Webview调用js方法传递参数时，如果参数类型为数字时,这里的数字不一定是int型，也指string型数字，比如“12345”，毕竟js中是没有类型区分的。 
+大写的但是BUT：如果你传递不是数字，而是普通字符串时，就要注意了，会报上述的错误，传递的String值没有定义。 
+解决方法：修改上述错误那行代码，在传递的数据两边加上单引号包裹字符串即可，大家可以在浏览器F12的console调试台试试调用js方法，传递非数字参数时，必须使用’data’这类形式方可正确调用，不然控制台也报上述错误。比如要在控制台调用:getData(myData)，会报错，但是如果调用:getData(‘myData’)是没问题的。
+原文：https://blog.csdn.net/Xiong_IT/article/details/52703941 
+**解决**
+``` stylus
+...
+mWeb.loadUrl("javascript:getData('" + data  + "')");// 注意data两边各多了一个单引号。
+...
+```
+
+
+
+
 
 ## TabLayout
 
