@@ -4,13 +4,137 @@ tags: Android,模板,java
 grammar_cjkRuby: true
 ---
 [Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);[recyclerView](#RecyclerView);[webView](#WebView);[Gson](#Gson);[TabLayout](#TabLayout);[屏幕宽高](#屏幕宽高);
-[Monkey](#Monkey);[阴影](#阴影);
-[扫描雷达](#扫描雷达);
-[动画](#动画);
+[Monkey](#Monkey);[阴影](#阴影);[扫描雷达](#扫描雷达);[动画](#动画);
 [动画](#定点平移动画);
 [PopupWindow](#PopupWindow);
 [Glide](#Glide);
 [自动安装](#自动安装);
+[呼吸灯](#呼吸灯);
+
+## 启动页
+``` stylus
+<style name="SplashTheme">
+    <!--关闭启动窗口-->
+    <item name="android:windowDisablePreview">true</item>
+</style>
+```
+``` stylus
+<activity
+    android:name=".SplashActivity"
+    android:label="@string/app_name"
+    android:theme="@style/SplashTheme">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+    </intent-filter>
+</activity>
+```
+
+``` stylus
+<style name="SplashTheme">
+    <item name="android:windowBackground">@drawable/placeholder_ui</item>
+</style>
+```
+
+> 参考
+[https://imeiji.github.io/2017/11/13/Android%20App%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%9D%A2%E6%9C%80%E4%BD%B3%E5%AE%9E%E7%8E%B0/](https://imeiji.github.io/2017/11/13/Android%20App%20%E5%90%AF%E5%8A%A8%E9%A1%B5%E9%9D%A2%E6%9C%80%E4%BD%B3%E5%AE%9E%E7%8E%B0/)
+[https://segmentfault.com/a/1190000016125742](https://segmentfault.com/a/1190000016125742)
+[https://jaeger.itscoder.com/android/2015/11/18/android-splash.html](https://jaeger.itscoder.com/android/2015/11/18/android-splash.html)
+[https://www.jianshu.com/p/7e2983b65ead](https://www.jianshu.com/p/7e2983b65ead)
+[https://www.jianshu.com/p/662274d5d637](https://www.jianshu.com/p/662274d5d637)
+[https://www.jianshu.com/p/6a863fac3f58](https://www.jianshu.com/p/6a863fac3f58)
+[https://juejin.im/post/5bf8f90a518825396d71ff2a](https://juejin.im/post/5bf8f90a518825396d71ff2a)
+[https://blog.csdn.net/qq_36455052/article/details/78429713](https://blog.csdn.net/qq_36455052/article/details/78429713)
+
+
+
+
+## 呼吸灯
+
+animator/anim_breath.xml
+``` stylus
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     <!-顺序动画->
+     android:ordering="sequentially"> 
+    <set 
+        <!--插值器使用立方减速 效果很逼真-->
+        android:interpolator="@android:interpolator/decelerate_cubic"
+        android:ordering="together">
+        <!--同步动画-->
+        <!--X Y轴同时放大5% -->
+        <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="2700"
+                android:valueTo="1.05"
+                android:valueFrom="1"
+                android:valueType="floatType"/>
+        <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="2700"
+                android:valueTo="1.05"
+                android:valueFrom="1"
+                android:valueType="floatType"/>
+    </set>
+    <set 
+        android:interpolator="@android:interpolator/decelerate_cubic"
+        android:ordering="together">
+        <!--X Y轴同时缩小回原始大小 -->
+        <objectAnimator
+                android:propertyName="scaleX"
+                android:duration="1300"
+                android:valueTo="1"
+                android:valueFrom="1.05"
+                android:valueType="floatType"/>
+        <objectAnimator
+                android:propertyName="scaleY"
+                android:duration="1300"
+                android:valueTo="1"
+                android:valueFrom="1.05"
+                android:valueType="floatType"/>
+    </set>
+</set>
+```
+
+``` stylus
+public class BreathAnim {
+    AnimatorSet mSet;
+
+    public BreathAnim(Context ctx, int animRid, Object target) {
+        mSet = (AnimatorSet) AnimatorInflater.loadAnimator(ctx, animRid);
+        mSet.setTarget(target);
+        mSet.addListener(new Animator.AnimatorListener() {
+             …
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                //ToDo
+                mSet.start();
+            }
+            ...
+        });
+    }
+
+    public void start() {
+        mSet.start();
+    }
+
+    public void cancel() {
+        mSet.cancel();
+        mSet = null;
+    }
+}
+```
+
+最后简单调用
+
+``` stylus
+BreathAnim ba=new BreathAnim(context,R.animator.anim_breath,mTargetView);
+ba.start();
+```
+
+> 参考地址
+[https://www.jianshu.com/p/4b4a5a1df589](https://www.jianshu.com/p/4b4a5a1df589)
+[http://linkyan.github.io/2013/06/breath/](http://linkyan.github.io/2013/06/breath/)
+[]()
 
 ## 自动安装
 ``` stylus
