@@ -8,7 +8,7 @@ grammar_cjkRuby: true
 [JDK](#JDK)
 [Android SDK](#Android SDK)
 [Git](#Git)
-[Jekins](#Jekins)
+[Jenkins](#Jenkins)
 [Gradle](#Gradle)
 [Node](#Node)
 [配置Job](#配置Job)
@@ -84,7 +84,7 @@ ANDROID_HOME=“安装目录”
 > 参考地址
 [官网安装教程](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 
-## Jekins
+## Jenkins
 
 Jenkins特性：
 
@@ -110,21 +110,31 @@ Jenkins特性：
 
 11、构件指纹(artifact fingerprint)，每次build的结果构件都被很好的自动管理，无需任何配置就可以方便的浏览下载。
 
-> 安装
+> 平台安装
 
-> 配置
+[jenkins官网](https://link.jianshu.com/?t=https%3A%2F%2Fjenkins.io%2F)
 
-1
+* mac
 
-> 测试
+`brew install jenkins`
 
-1
-http://jenkins-ci.org/
+* window
 
+官网下载Jenkin.war包
 
-## 运行命令（war）
+[安装方式参考](https://www.jianshu.com/p/400b4516b98e)
 
-    java -jar jenkins.war
+> 各种插件配置见插件详情表
+
+> 测试运行
+
+* mac
+
+    `jenkins`
+
+* window
+
+  `java -jar jenkins.war` 
 
 ## Jenkins插件列表
 
@@ -135,15 +145,60 @@ http://jenkins-ci.org/
 * Gradle Plugin
 * SSH Slaves plugin
 * Timestamper
+* Publish over ssh
 * 
 
+> 参考地址
+[https://www.jianshu.com/p/400b4516b98e](https://www.jianshu.com/p/400b4516b98e)
+[https://blog.csdn.net/RonnyJiang/article/details/51208009](https://blog.csdn.net/RonnyJiang/article/details/51208009)
+[https://segmentfault.com/a/1190000015391418](https://segmentfault.com/a/1190000015391418)
+
 ## Gradle(可选)
-> 安装
-> 配置
+[Gradle官网](https://gradle.org/)
+> 各平台安装
+* mac
+
+`brew install gradle`
+
+* liunx、unbuntu和centos
+
+`sdk install gradle 4.6`
+
+* 
+> 环境变量配置
+
+`$ export PATH=$PATH:/opt/gradle/gradle-4.6/bin`
+
 > 测试
 
+`gradle -v`
+
+出现如下：
+------------------------------------------------------------
+Gradle 4.6
+------------------------------------------------------------
+Build time:   2018-02-28 13:36:36 UTC
+Revision:     8fa6ce7945b640e6168488e4417f9bb96e4ab46c
+
+Groovy:       2.4.12
+Ant:          Apache Ant(TM) version 1.9.9 compiled on February 2 2017
+JVM:          1.8.0_161 (Oracle Corporation 25.161-b12)
+OS:           Mac OS X 10.13.3 x86_64
+
+* window
+
+`scoop install gradle`
+
+注意：
+ * windows可以使用scoop安装
+ * windows还可以使用Chocolatey包管理器安装
+ 
+ 另：手动安装就不介绍了
+ 
+ 
 ## 二维码生成
 > 安装
+
 > 配置
 > 测试
 
