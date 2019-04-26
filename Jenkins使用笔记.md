@@ -16,6 +16,12 @@ grammar_cjkRuby: true
 [集成RSS](#集成RSS)
 [](#)
 
+## apk版本设置为名称
+
+> 参考
+[https://juejin.im/entry/5adaa9ecf265da0ba062b9a1](https://juejin.im/entry/5adaa9ecf265da0ba062b9a1)
+[]()
+
 ## JDK
 
 > 安装

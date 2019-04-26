@@ -25,6 +25,8 @@ grammar_cjkRuby: true
 
 ## 填坑记录
 ![]()
+![]()
 
 ## 参考
-https://www.jianshu.com/p/3668979476ad
+[https://www.pgyer.com/doc/view/jenkins](https://www.pgyer.com/doc/view/jenkins)
+[https://www.jianshu.com/p/3668979476ad](https://www.jianshu.com/p/3668979476ad)
