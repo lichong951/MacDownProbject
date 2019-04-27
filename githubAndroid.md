@@ -3,6 +3,18 @@ title: 【Android】开源UI设计收藏记录
 tags: Android,GitHub,开源
 grammar_cjkRuby: true
 ---
+## 加载进度条-Gloading
+![en_load_success](./pic/gif/en_load_special_loading.gif)
+![en_load_success](./pic/gif/en_load_empty_data.gif)
+![en_load_success](./pic/gif/en_load_failed.gif)
+![en_load_success](./pic/gif/en_load_success.gif)
+
+[gloding](https://github.com/luckybilly/Gloading)
+
+
+
+
+
 ## 记录
 
 ## 圆呼吸效果 

@@ -1,6 +1,14 @@
 # Android面试题
+
+## 主线程中的Looper.loop()一直无限循环为什么不会造成ANR
+
+Looer.loop()方法可能会引起主线程的阻塞，但只要它的消息循环没有被阻塞，能一直处理事件就不会产生ANR异常
+
+https://www.jianshu.com/p/cfe50b8b0a41
+
 ## Activity 四种加载模式介绍
-![](./pic/android/Snip20181228_1.png)
+
+![1](./pic/android/Snip20181228_1.png)
 
 * standard:默认值。系统始终会在目标任务中创建新的 Activity 实例并向其传送 Intent。
 * singleTop:如果目标任务的顶部已存在一个 Activity 实例，则系统会通过调用该实例的 onNewIntent() 方法向其传送 Intent，而不是创建新的 Activity 实例。
