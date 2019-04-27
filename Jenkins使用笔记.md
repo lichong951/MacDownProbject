@@ -1,9 +1,8 @@
 ---
 title: Jenkins使用笔记（win）
-tags: 自动构建,Jenkins
-grammar_cjkRuby: true
+tags: 自动构建,Jenkins,纲要
 ---
-# Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务
+# Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务大纲
 
 [JDK](#JDK)
 [Android SDK](#Android SDK)
@@ -27,7 +26,7 @@ grammar_cjkRuby: true
 
 > 安装
 
-下载地址：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+下载地址：[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 根据电脑环境安装合适的版本
 
@@ -42,7 +41,8 @@ grammar_cjkRuby: true
     变量名： Path
     变量值： %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
     变量名： CLASSPATH
-    变量值： .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;       注意：这前面有一个点‘.’
+    变量值： .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;       
+    注意：这前面有一个点‘.’
 
 
 > 测试
@@ -64,7 +64,8 @@ ANDROID_HOME=“安装目录”
 
 > 测试
 使用adb进行命令测试如下图
-![](.pic/android/QQ截图20190413172923.png)
+
+![](./pic/android/QQ截图20190413172923.png)
 
 > 参考
 
@@ -249,7 +250,7 @@ npm install http-server -g
     echo %WORKSPACE%
     copy %WORKSPACE%\app\build\outputs\apk\debug\app-debug.apk C:\Users\{user}\public\apk\%JOB_NAME%-debug-%BUILD_NUMBER%.apk
     cd C:\jenkins
-    java -jar qr.jar url=http://10.1.17.54:8000/apk/%JOB_NAME%-debug-%BUILD_NUMBER%.apk image=%JOB_NAME%-debug-%BUILD_NUMBER%.jpg save=C:\Users\zhangtj-a\public\qr_img
+    java -jar qr.jar url=http://10.1.17.54:8000/apk/%JOB_NAME%-debug-%BUILD_NUMBER%.apk image=%JOB_NAME%-debug-%BUILD_NUMBER%.jpg save=C:\Users\{user}\public\qr_img
 
 > Set build desc
 
@@ -261,9 +262,9 @@ npm install http-server -g
 
 163邮箱通知设置
 
-https://blog.csdn.net/yamingwu/article/details/44142635
+[https://blog.csdn.net/yamingwu/article/details/44142635](https://blog.csdn.net/yamingwu/article/details/44142635)
 
-># 模板一
+### 模板一
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
@@ -295,7 +296,7 @@ Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
 变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>
 ```
 
-># 模板二
+### 模板二
 
 ```
 Jenkins构建通知:$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!
