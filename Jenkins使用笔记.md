@@ -1,6 +1,6 @@
 ---
 title: Jenkins使用笔记（win）
-tags: IOS,自动构建,Jenkins
+tags: 自动构建,Jenkins
 grammar_cjkRuby: true
 ---
 # Jenkins+AndroidSDK+Node.js+http-server+qr.jar+163邮箱服务
@@ -14,9 +14,10 @@ grammar_cjkRuby: true
 [配置Job](#配置Job)
 [二维码生成](#二维码生成)
 [集成RSS](#集成RSS)
+[apk版本设置为名称](#Apk版本设置为名称)
 [](#)
 
-## apk版本设置为名称
+## Apk版本设置为名称
 
 > 参考
 [https://juejin.im/entry/5adaa9ecf265da0ba062b9a1](https://juejin.im/entry/5adaa9ecf265da0ba062b9a1)
@@ -130,7 +131,7 @@ Jenkins特性：
 
 [安装方式参考](https://www.jianshu.com/p/400b4516b98e)
 
-> 各种插件配置见插件详情表
+> 各种插件配置见[Jenkins插件列表](#Jenkins插件列表)
 
 > 测试运行
 
@@ -208,6 +209,7 @@ OS:           Mac OS X 10.13.3 x86_64
 > 配置
 > 测试
 
+> 注：忘记在哪下载的qr.jar包。如有需要发邮件[联系我](#联系我)
 
 ## Node
 > 安装
@@ -356,3 +358,8 @@ b、在启动jenkins 的时候禁止jenkins杀死衍生进程
 添加 Post build task插件,在 Post build task 处执行脚本。
 
 每当检测到项目编译信息中包含log text中的文本即执行script中的shell脚本。此处执行脚本启动的进程，jenkins不会自动kill。
+
+## 联系我
+> QQ:94297366
+
+> Email: <lichongmac@163.com>
