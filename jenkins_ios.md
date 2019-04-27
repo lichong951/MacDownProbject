@@ -20,6 +20,13 @@ grammar_cjkRuby: true
 
 将login.keychain文件upload之后，会出现下图的界面，根据需要将证书添加进去即可，但是由于macOS10.12以及以后的系统里面没有login.keychain文件，只有login.keychain-db,可以复制出来删除-db，也可以创建一个快捷方式名字叫做login.keychain，upload就好了
 
+>cp login.keychain-db ~/Desktop/login.keychain
+
+
+### 添加Provisioning Profiles
+
+https://www.jianshu.com/p/0affef7cef69
+
 ## Job参数配置
 ## 发布上传fri或者蒲公英等第三方
 
