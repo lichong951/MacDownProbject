@@ -14,8 +14,24 @@ tags: 自动构建,Jenkins,纲要
 [二维码生成](#二维码生成)
 [集成RSS](#集成RSS)
 [apk版本设置为名称](#Apk版本设置为名称)
+[APK签名原理及方法](#APK签名原理及方法)
 [](#)
 
+## APK签名原理及方法.
+[https://juejin.im/entry/575ed0bb1532bc00609c3aa9](https://juejin.im/entry/575ed0bb1532bc00609c3aa9)
+[https://www.jianshu.com/p/e9a685c88258](https://www.jianshu.com/p/e9a685c88258)
+[https://www.jianshu.com/p/53078d03c9bf](https://www.jianshu.com/p/53078d03c9bf)
+
+
+
+## 圆形button设置点击区域为圆形
+
+[https://juejin.im/entry/59d73506f265da0668762574](https://juejin.im/entry/59d73506f265da0668762574)
+
+[https://blog.csdn.net/Vincent_lhj/article/details/50898765](https://blog.csdn.net/Vincent_lhj/article/details/50898765)
+[http://www.gcssloop.com/customview/touch-matrix-region](http://www.gcssloop.com/customview/touch-matrix-region)
+[https://www.jianshu.com/p/f50dbae3a07f](https://www.jianshu.com/p/f50dbae3a07f)
+[]()
 ## Apk版本设置为名称
 
 > 参考
