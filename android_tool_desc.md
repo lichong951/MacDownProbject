@@ -3,6 +3,9 @@ title: Android开发工具链
 tags: Android,开发工具,工具链
 grammar_cjkRuby: true
 ---
+## webView调试
+[https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=zh-cn](https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews?hl=zh-cn)
+
 ## Android Studio
 ### 快捷键
 ## 插件

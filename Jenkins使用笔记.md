@@ -18,8 +18,14 @@ tags: 自动构建,Jenkins,纲要
 [](#)
 
 ## APK签名原理及方法.
+``` stylus
+java -jar signapk.jar testkey.x509.pem testkey.pk8 update.apk update_signed.apk
+```
+
 [https://juejin.im/entry/575ed0bb1532bc00609c3aa9](https://juejin.im/entry/575ed0bb1532bc00609c3aa9)
+
 [https://www.jianshu.com/p/e9a685c88258](https://www.jianshu.com/p/e9a685c88258)
+
 [https://www.jianshu.com/p/53078d03c9bf](https://www.jianshu.com/p/53078d03c9bf)
 
 
