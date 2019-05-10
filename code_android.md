@@ -148,6 +148,8 @@ private static void installNormal(Context context,String apkPath) {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         //参数1 上下文, 参数2 Provider主机地址 和配置文件中保持一致   参数3  共享的文件
         Uri apkUri = FileProvider.getUriForFile(context, "com.example.chenfengyao.installapkdemo", file);
+        //2. 设置 category 如果没有这个会有一个选择列表（比较糟糕的现象）
+         intent.addCategory(Intent.CATEGORY_DEFAULT);
         //添加这一句表示对目标应用临时授权该Uri所代表的文件
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.setDataAndType(apkUri, "application/vnd.android.package-archive");
@@ -161,8 +163,17 @@ private static void installNormal(Context context,String apkPath) {
 [https://blog.csdn.net/cfy137000/article/details/70257912](https://blog.csdn.net/cfy137000/article/details/70257912)
 
 ## Glide
+
+[https://www.jianshu.com/p/91161f458cd8](https://www.jianshu.com/p/91161f458cd8)
+[https://juejin.im/post/5b3a3b8d6fb9a025080411e8](https://juejin.im/post/5b3a3b8d6fb9a025080411e8)
+
 [https://www.jianshu.com/p/89567c934008](https://www.jianshu.com/p/89567c934008)
 
+### 圆角+圆角边框
+[https://www.jianshu.com/p/d44206f36106](https://www.jianshu.com/p/d44206f36106)
+
+[https://blog.csdn.net/aiguoguo000/article/details/80185011](https://blog.csdn.net/aiguoguo000/article/details/80185011)
+[]()
 ## 动画
 ``` stylus
 RotateAnimation rotateAnimation = new RotateAnimation(0, 359, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
