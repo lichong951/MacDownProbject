@@ -10,6 +10,24 @@ grammar_cjkRuby: true
 [Glide](#Glide);
 [自动安装](#自动安装);
 [呼吸灯](#呼吸灯);
+[wifi热点（AP）](#Wifi热点（AP）);
+[](#Bitmap转缓存输入流BufferedInputStream)
+[](#)
+
+##
+## Bitmap转缓存输入流BufferedInputStream
+[https://blog.csdn.net/u013008419/article/details/45170387](https://blog.csdn.net/u013008419/article/details/45170387)
+
+## Wifi热点（AP）
+[https://juejin.im/post/5bec1a5d6fb9a049be5d0aa8](https://juejin.im/post/5bec1a5d6fb9a049be5d0aa8)
+[https://blog.csdn.net/a_zhon/article/details/52472657](https://blog.csdn.net/a_zhon/article/details/52472657)
+[https://blog.csdn.net/vnanyesheshou/article/details/82147110](https://blog.csdn.net/vnanyesheshou/article/details/82147110)
+[https://blog.csdn.net/guang_liang_/article/details/55224675](https://blog.csdn.net/guang_liang_/article/details/55224675)
+## 保活
+[https://juejin.im/post/5baedde6f265da0a8d369eb2](https://juejin.im/post/5baedde6f265da0a8d369eb2)
+
+## IP&网关
+
 
 ## 启动页
 ``` stylus

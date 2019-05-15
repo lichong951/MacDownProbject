@@ -8,6 +8,15 @@ grammar_cjkRuby: true
 [正则表达式](#正则表达式)
 [](#)
 
+## socket
+[https://blog.csdn.net/qq_25806863/article/details/75533109](https://blog.csdn.net/qq_25806863/article/details/75533109)
+[https://blog.csdn.net/a_zhon/article/details/52384129](https://blog.csdn.net/a_zhon/article/details/52384129)
+[https://blog.csdn.net/kylsen/article/details/53213288](https://blog.csdn.net/kylsen/article/details/53213288)
+[https://blog.csdn.net/dmk877/article/details/51685656](https://blog.csdn.net/dmk877/article/details/51685656)
+[]()
+
+
+
 ## 正则表达式
 
 [https://blog.csdn.net/u011781521/article/details/69384234](https://blog.csdn.net/u011781521/article/details/69384234)
