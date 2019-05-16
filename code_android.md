@@ -12,9 +12,26 @@ grammar_cjkRuby: true
 [呼吸灯](#呼吸灯);
 [wifi热点（AP）](#Wifi热点（AP）);
 [](#Bitmap转缓存输入流BufferedInputStream)
+[](#操作路由表)
+[](#Root权限)
+[](#wifi)
 [](#)
 
 ##
+## wifi
+[]()
+[android判断网络或wifi是否连接](https://blog.csdn.net/zhangxp_xml/article/details/52702743)
+
+## Root权限
+[https://blog.csdn.net/mChenys/article/details/86701272](https://blog.csdn.net/mChenys/article/details/86701272)
+[https://www.jianshu.com/p/f9f39704e30c](https://www.jianshu.com/p/f9f39704e30c)
+
+
+## 操作路由表
+[https://www.cnblogs.com/simonshi/archive/2011/05/31/2065011.html](https://www.cnblogs.com/simonshi/archive/2011/05/31/2065011.html)
+[https://blog.csdn.net/u013768919/article/details/70840229](https://blog.csdn.net/u013768919/article/details/70840229)
+[https://blog.csdn.net/u011068702/article/details/53899537](https://blog.csdn.net/u011068702/article/details/53899537)
+
 ## Bitmap转缓存输入流BufferedInputStream
 [https://blog.csdn.net/u013008419/article/details/45170387](https://blog.csdn.net/u013008419/article/details/45170387)
 
