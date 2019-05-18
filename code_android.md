@@ -15,9 +15,31 @@ grammar_cjkRuby: true
 [](#操作路由表)
 [](#Root权限)
 [](#wifi)
+[定时任务](#定时任务)
 [](#)
 
 ##
+## 定时任务
+```
+new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        sysTimeTv.setText(TimeUtils.millis2Date(System.currentTimeMillis()));
+
+                        String cmdQuery = CmdUtil.CODE_TEMP_HUMI
+                                + CmdUtil.SET_PARAM_DEFAULT_00
+                                + CmdUtil.SET_PARAM_DEFAULT_00;
+                        SerialPortUtil.getIntance().sendSerialPort(cmdQuery);
+
+                    }
+                });
+            }
+        }, 500, 100);
+```
+
 ## wifi
 []()
 [android判断网络或wifi是否连接](https://blog.csdn.net/zhangxp_xml/article/details/52702743)
