@@ -36,21 +36,14 @@ grammar_cjkRuby: true
 [自动安装](#自动安装);[呼吸灯](#呼吸灯);
 
 [wifi热点（AP）](#Wifi热点（AP）);
-
-[Bitmap转缓存输入流BufferedInputStream](#Bitmap转缓存输入流BufferedInputStream)
-
-[操作路由表](#操作路由表);
-
-[Root权限](#Root权限)
-
-[wifi](#wifi)
-
-[管理System UI (状态栏 + 导航栏)](#管理System UI (状态栏 + 导航栏))
-
-[EditText光标颜色](#EditText光标颜色)
-
+<<<<<<< HEAD
+=======
+[](#Bitmap转缓存输入流BufferedInputStream)
+[](#操作路由表)
+[](#Root权限)
+[](#wifi)
+[定时任务](#定时任务)
 [](#)
-##
 
 ## EditText光标颜色
 
@@ -83,6 +76,28 @@ final View decorView = getWindow().getDecorView();
 ```
 [https://www.jianshu.com/p/e27e7f09d1f7](https://www.jianshu.com/p/e27e7f09d1f7)
 [状态栏及导航栏相关知识小结](http://lijiankun24.com/%E7%8A%B6%E6%80%81%E6%A0%8F%E5%8F%8A%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/)
+## 定时任务
+```
+new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        sysTimeTv.setText(TimeUtils.millis2Date(System.currentTimeMillis()));
+
+                        String cmdQuery = CmdUtil.CODE_TEMP_HUMI
+                                + CmdUtil.SET_PARAM_DEFAULT_00
+                                + CmdUtil.SET_PARAM_DEFAULT_00;
+                        SerialPortUtil.getIntance().sendSerialPort(cmdQuery);
+
+                    }
+                });
+            }
+        }, 500, 100);
+```
+
+## wifi
 []()
 
 ## wifi
