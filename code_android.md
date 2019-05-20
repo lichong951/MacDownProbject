@@ -3,23 +3,89 @@ title: Android常用代码模板
 tags: Android,模板,java
 grammar_cjkRuby: true
 ---
-[Shape](#shape)；[Activity](#Activity)；[ListView](#ListView);[recyclerView](#RecyclerView);[webView](#WebView);[Gson](#Gson);[TabLayout](#TabLayout);[屏幕宽高](#屏幕宽高);
-[Monkey](#Monkey);[阴影](#阴影);[扫描雷达](#扫描雷达);[动画](#动画);
-[动画](#定点平移动画);
-[PopupWindow](#PopupWindow);
-[Glide](#Glide);
-[自动安装](#自动安装);
-[呼吸灯](#呼吸灯);
-[wifi热点（AP）](#Wifi热点（AP）);
-[](#Bitmap转缓存输入流BufferedInputStream)
-[](#操作路由表)
-[](#Root权限)
-[](#wifi)
-[](#)
+[Shape](#shape)；
 
+[Activity](#Activity)；
+
+[ListView](#ListView);
+
+[recyclerView](#RecyclerView);
+
+[webView](#WebView);
+
+[Gson](#Gson);
+
+[TabLayout](#TabLayout);
+
+[屏幕宽高](#屏幕宽高);
+
+[Monkey](#Monkey);
+
+[阴影](#阴影);
+
+[扫描雷达](#扫描雷达);
+
+[动画](#动画);
+
+[动画](#定点平移动画);
+
+[PopupWindow](#PopupWindow);
+
+[Glide](#Glide);
+
+[自动安装](#自动安装);[呼吸灯](#呼吸灯);
+
+[wifi热点（AP）](#Wifi热点（AP）);
+
+[Bitmap转缓存输入流BufferedInputStream](#Bitmap转缓存输入流BufferedInputStream)
+
+[操作路由表](#操作路由表);
+
+[Root权限](#Root权限)
+
+[wifi](#wifi)
+
+[管理System UI (状态栏 + 导航栏)](#管理System UI (状态栏 + 导航栏))
+
+[EditText光标颜色](#EditText光标颜色)
+
+[](#)
 ##
-## wifi
+
+## EditText光标颜色
+
+[改Android EditText光标颜色](https://blog.csdn.net/cw2004100021124/article/details/12649671)
+
+## 管理System UI (状态栏 + 导航栏)
+``` stylus
+final View decorView = getWindow().getDecorView();
+        final int flag=
+                                View.SYSTEM_UI_FLAG_LAYOUT_STABLE|
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
+        ;
+        decorView.setSystemUiVisibility(flag);
+        decorView
+                .setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        Log.i(TAG, "visibility = " + visibility);
+                        status = visibility;
+                        if (0 == status || 4 == status) {
+                            decorView.setSystemUiVisibility(flag );
+                        }
+                    }
+                });
+```
+[https://www.jianshu.com/p/e27e7f09d1f7](https://www.jianshu.com/p/e27e7f09d1f7)
+[状态栏及导航栏相关知识小结](http://lijiankun24.com/%E7%8A%B6%E6%80%81%E6%A0%8F%E5%8F%8A%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/)
 []()
+
+## wifi
 [android判断网络或wifi是否连接](https://blog.csdn.net/zhangxp_xml/article/details/52702743)
 
 ## Root权限
