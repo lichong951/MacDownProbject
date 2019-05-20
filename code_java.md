@@ -6,7 +6,18 @@ grammar_cjkRuby: true
 
 [TreeSet](#TreeSet);
 [正则表达式](#正则表达式)
-[](#)
+[字符串转16](#字符串转16)
+[](#inputStream 和 outputStream)
+
+## inputStream 和 outputStream
+[Java IO流操作汇总： inputStream 和 outputStream](https://blog.csdn.net/wangbaochu/article/details/53484042)
+[java字符串和十六进制字符串互转](https://www.jianshu.com/p/5c4d5908d51a)
+[java byte[]与十六进制字符串相互转换](https://blog.csdn.net/worm0527/article/details/69939307)
+[]()
+## 字符串转16
+[Java字符串转16 进制工具类Hex.java](https://blog.csdn.net/jia635/article/details/56678086)
+
+
 
 ## socket
 [https://blog.csdn.net/qq_25806863/article/details/75533109](https://blog.csdn.net/qq_25806863/article/details/75533109)

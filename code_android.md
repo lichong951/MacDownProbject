@@ -43,8 +43,14 @@ grammar_cjkRuby: true
 [](#Root权限)
 [](#wifi)
 [定时任务](#定时任务)
+[蓝牙](#蓝牙)                                                                                                                                                                      .0
 [](#)                                                                                                                                                                      .0
-
+## 蓝牙
+[Android蓝牙与血压计蓝牙模块通讯](https://www.jianshu.com/p/a6efa157132c)
+[安卓蓝牙串口中InputStream数据接收不完整，已解决](https://blog.csdn.net/clliu_hust/article/details/80874272)
+[android蓝牙开发---与蓝牙模块进行通信](http://www.cnblogs.com/wenjiang/p/3200138.html)
+[android 蓝牙编程重点---如何发送和接收16进制数据](http://www.voidcn.com/article/p-krttaian-sm.html)
+[android 蓝牙模块Bluetooth 使用 十六进制数据发送](https://blog.csdn.net/u200814342A/article/details/71603451)
 
 ## EditText光标颜色
 
