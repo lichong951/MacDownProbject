@@ -36,15 +36,44 @@ grammar_cjkRuby: true
 [自动安装](#自动安装);[呼吸灯](#呼吸灯);
 
 [wifi热点（AP）](#Wifi热点（AP）);
-<<<<<<< HEAD
-=======
+
 [](#Bitmap转缓存输入流BufferedInputStream)
 [](#操作路由表)
 [](#Root权限)
 [](#wifi)
 [定时任务](#定时任务)
-[蓝牙](#蓝牙)                                                                                                                                                                      .0
-[](#)                                                                                                                                                                      .0
+[蓝牙](#蓝牙)
+[edittext焦点](#Edittext焦点)
+
+[](#) 
+## Edittext焦点
+进入页面不弹出输入键盘
+
+1） android:focusableInTouchMode="true"
+          android:focusable="true"
+
+2）  mEditText = findViewById(R.id.mEditText);
+          mEditText.clearFocus();    
+``` stylus
+//父及目录加入
+ <LinearLayout
+ android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        
+  //然后初始化后添加
+   mEditText = findViewById(R.id.mEditText);
+   mEditText.clearFocus();
+```
+[https://www.jianshu.com/p/3d31d681f4bc]()
 ## 蓝牙
 [Android蓝牙与血压计蓝牙模块通讯](https://www.jianshu.com/p/a6efa157132c)
 [安卓蓝牙串口中InputStream数据接收不完整，已解决](https://blog.csdn.net/clliu_hust/article/details/80874272)
