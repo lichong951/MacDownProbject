@@ -45,6 +45,7 @@ grammar_cjkRuby: true
 [蓝牙](#蓝牙)
 [edittext焦点](#Edittext焦点)
 
+[EditText光标颜色](#EditText光标颜色) 
 [](#) 
 ## Edittext焦点
 进入页面不弹出输入键盘
@@ -82,8 +83,16 @@ grammar_cjkRuby: true
 [android 蓝牙模块Bluetooth 使用 十六进制数据发送](https://blog.csdn.net/u200814342A/article/details/71603451)
 
 ## EditText光标颜色
+[Android进阶之路 - EditText光标颜色与下划线颜色的设置](https://blog.csdn.net/qq_20451879/article/details/79075272)
 
-[改Android EditText光标颜色](https://blog.csdn.net/cw2004100021124/article/details/12649671)
+``` stylus
+<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>//设置全局的获取焦点后的光标颜色
+    </style>
+```
 
 ## 管理System UI (状态栏 + 导航栏)
 ``` stylus
