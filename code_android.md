@@ -33,20 +33,111 @@ grammar_cjkRuby: true
 
 [Glide](#Glide);
 
-[自动安装](#自动安装);[呼吸灯](#呼吸灯);
+[自动安装](#自动安装);
+
+[呼吸灯](#呼吸灯);
 
 [wifi热点（AP）](#Wifi热点（AP）);
 
-[](#Bitmap转缓存输入流BufferedInputStream)
-[](#操作路由表)
-[](#Root权限)
-[](#wifi)
+[Bitmap转缓存输入流BufferedInputStream](#Bitmap转缓存输入流BufferedInputStream)
+
+[操作路由表](#操作路由表)
+
+[Root权限](#Root权限)
+
+[wifi](#wifi)
+
 [定时任务](#定时任务)
+
 [蓝牙](#蓝牙)
+
 [edittext焦点](#Edittext焦点)
 
 [EditText光标颜色](#EditText光标颜色) 
-[](#) 
+
+[倒计时](#倒计时) 
+
+[ProgressDialog进度对话框的使用](#ProgressDialog进度对话框的使用) 
+
+[对话框列表](#对话框列表)
+
+[ScrollView](#ScrollView)
+
+[adb](#adb)
+
+[bitmap](#Bitmap)
+
+## Bitmap
+
+### 参考
+[图片颜色处理/	关于RGB转换YUV的探讨与实现](https://www.cnblogs.com/leaven/archive/2012/09/06/2672830.html)
+
+[常用Bitmap处理方法收集：普通裁剪，缩放，圆形裁剪](https://blog.csdn.net/qq_27856623/article/details/64439477)
+
+[DIY抠图](https://blog.csdn.net/DaltSoftware/article/details/78182617)
+
+[]()
+
+## adb
+adb push <source> <destination>
+
+### 参考地址
+[adb上传图片](https://blog.csdn.net/lu_ca/article/details/79526814)
+
+## ScrollView
+[控制ScrollView滚动到底部](https://blog.csdn.net/u012252502/article/details/39291903)
+
+## 对话框列表
+
+[常用Dialog的几种格式显示,普通，列表，单选，多选，可编辑dialog等](https://blog.csdn.net/qq_34471736/article/details/54248208)
+
+## ProgressDialog进度对话框的使用
+```
+例：①//new Dialog  直接创建
+ProgressDialog pd = new ProgressDialog(this);
+pd.show();
+
+```
+```
+②//使用静态方式创建并显示，但是这种进度条只能是圆形条,可以设置title和Message提示内容
+ProgressDialog pd1 = ProgressDialog.show(this, "提示", "正在登陆中");
+```
+
+```
+③//使用静态方式创建并显示，这种进度条只能是圆形条,注意：这里最后一个参数boolean indeterminate设置是否是不明确的状态
+ProgressDialog pd2 = ProgressDialog.show(this, "提示", "正在登陆中", false);
+```
+
+```
+④// 使用静态方式创建并显示，这种进度条只能是圆形条,注意：这里最后一个参数boolean cancelable 设置是否进度条是可以取消的
+ProgressDialog pd3 = ProgressDialog.show(this, "提示", "正在登陆中", false, true);
+--------------------- 
+作者：Afanbaby 
+来源：CSDN 
+原文：https://blog.csdn.net/Afanbaby/article/details/73202571 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+```
+````
+⑤// 使用静态方式创建并显示，但是这种进度条只能是圆形条,这里最后一个参数 DialogInterface.OnCancelListener(取消的监听)
+private DialogInterface.OnCancelListener cancelListener;
+cancelListener = new DialogInterface.OnCancelListener() {
+    @Override
+    public void onCancel(DialogInterface dialog) {
+        // TODO Auto-generated method stub
+        Toast.makeText(MainActivity.this, "进度条被取消", Toast.LENGTH_LONG).show();
+    }
+};
+ProgressDialog pd4 = ProgressDialog.show(this, "提示", "正在登陆中", true, true, cancelListener);
+--------------------- 
+作者：Afanbaby 
+来源：CSDN 
+原文：https://blog.csdn.net/Afanbaby/article/details/73202571 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+````
+
+
+### 参考
+[ProgressDialog进度对话框的使用](https://blog.csdn.net/Afanbaby/article/details/73202571)
 ## Edittext焦点
 进入页面不弹出输入键盘
 
@@ -141,6 +232,32 @@ new Timer().schedule(new TimerTask() {
             }
         }, 500, 100);
 ```
+## 倒计时
+```
+private CountDownTimer timer = new CountDownTimer(10000, 1000) {
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            mTvShow.setText((millisUntilFinished / 1000) + "秒后可重发");
+        }
+
+        @Override
+        public void onFinish() {
+            mTvShow.setEnabled(true);
+            mTvShow.setText("获取验证码");
+        }
+    };
+
+--------------------- 
+作者：Adan0520 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_20785431/article/details/51571300 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+```
+### 参考：
+[Android实现倒计时之使用CountDownTimer](https://blog.csdn.net/qq_20785431/article/details/51571300)
+
 
 ## wifi
 []()
